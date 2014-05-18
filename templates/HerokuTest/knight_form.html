@@ -1,0 +1,29 @@
+ 
+<%inherit file="../base.html" />
+
+<%def name="css_files()">
+    ${ parent.css_files() }
+    ## <link href="/static/css/index.css" rel="stylesheet">
+</%def>
+
+<%def name="title()">Upload File</%def>
+<%def name="js_defer()">
+    ${ parent.js_defer() }
+</%def>
+
+
+<form action="" method="post">
+  <div style="display:none">
+      <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}" />
+    </div>
+    % if form:
+      % for field in form:
+      ${ field.name }  ${ field}
+      <br>
+      % endfor
+    % endif
+
+    <input type="submit" value="Create" />
+</form>
+
+
