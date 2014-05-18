@@ -17,14 +17,10 @@
       <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}" />
     </div>
     % if form:
-      <form class="form-inline" role="form">
         % for field in form:
-          <div class="form-group">
-            <label class="control-label">${ field.name }</label>
+            ${ field.name }
             ${ field }
-          </div>
         % endfor
-      </form>
     % endif
 
     <input type="submit" value="Create" />
