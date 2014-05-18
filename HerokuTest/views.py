@@ -20,6 +20,12 @@ class IndexView(ListView):
 class CView(CreateView):
     model = Knight
 
+    def get_form(self, form_class):
+        form = super(CView, self).get_form(form_class)
+        form.fields['name'].widget.attrs.update({'class': 'form-control'})
+        print form.as_table()
+        return form
+
     def get_success_url(self):
         return reverse('index')
 
