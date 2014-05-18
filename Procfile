@@ -1,1 +1,1 @@
-web: gunicorn wsgi.wsgi:application
+web: gunicorn Sourcefinder.wsgi.wsgi:application
